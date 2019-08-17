@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('blog/', include('Blog.urls')),
+    path('admin/', admin.site.urls),        # 管理后台路由
+    path('', include('Blog.urls')),         # 默认使用 Blog路由
+    path('blog/', include('Blog.urls')),    # Blog下的路由
 ]
