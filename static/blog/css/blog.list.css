@@ -1,0 +1,6 @@
+.box-shadow {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+}
