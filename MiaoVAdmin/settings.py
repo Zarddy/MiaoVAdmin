@@ -120,8 +120,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # 每个应用下对应的"static"目录
 
 STATICFILES_DIRS = [
-    STATIC_URL,
+    STATIC_URL, # 每个应用下对应的"static"目录
+    os.path.join(BASE_DIR, 'static'), # 设置指向根目录下的 static 目录
 ]
