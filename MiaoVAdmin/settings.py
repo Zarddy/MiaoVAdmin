@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 注册Blog应用
     'Blog.apps.BlogConfig',
+    # 注册Api应用
+    'Api.apps.ApiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,17 @@ STATICFILES_DIRS = [
     STATIC_URL, # 每个应用下对应的"static"目录
     os.path.join(BASE_DIR, 'static'), # 设置指向根目录下的 static 目录
 ]
+
+
+# https://www.django-rest-framework.org/
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
