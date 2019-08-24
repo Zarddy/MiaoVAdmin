@@ -15,7 +15,7 @@ class Category(models.Model):
     title = models.TextField()                  # 标题
     cover = models.TextField(default='')        # 封面图
     source = models.TextField(default='')       # 源数据链接
-    type = models.IntegerField(default=0)       # 文章类型，默认0：普通文章，1：视频下载，2：相册文章（纯图片）
+    type = models.IntegerField(default=0)       # 文章类型，默认0：普通文章，1：相册文章（纯图片），2：视频文章（纯单一视频）
     sort = models.IntegerField(default=9)       # 排序
     comment = models.TextField(default='')      # 备注
 
@@ -31,6 +31,7 @@ class Article(models.Model):
     title = models.TextField()                              # 标题
     cover = models.TextField(default='')                    # 封面图
     content = models.TextField(default='')                  # 详细内容
+    video_url = models.TextField(default='')                # 视频地址
     http_download_link = models.TextField(default='')       # http 下载链接
     xunlei_download_link = models.TextField(default='')     # 迅雷下载链接
     source = models.TextField(default='')                   # 来源
